@@ -1,0 +1,13 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        ".git",
+        "node_modules/",
+        "logs/",
+        "dist/"
+    ],
+    "verbose": true,
+    "ext": "ts,js,html,json,yml",
+    "exec": "npm run build && npm run lint && node --inspect=0.0.0.0:9229 --nolazy --harmony ./dist/server.js",
+    "delay": "2500"
+}

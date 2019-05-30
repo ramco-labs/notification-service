@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "name": "notification-server",
+      "script": "./dist/server.js",
+      "exec_mode": "cluster",
+      "instances": 0,
+      "merge_logs": true,
+      "log_type": "json",
+      "max_memory_restart": "200M",
+      "max_restarts": "100",
+      "output": "./logs/out.log",
+      "error": "./logs/error.log",
+      "dependencies": [
+        "pm2-logrotate"
+      ],
+      "node_args": "--harmony",
+      "watch": false,
+      "env": {
+        "NODE_ENV": "production",
+        "NODEJS_PORT": "8090"
+      }
+    }
+  ]
+}

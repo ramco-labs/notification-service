@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  notification-server:
+    build:
+      context: .
+      args: 
+        app_port: 8090
+        app_db: notification-db:27018
+        app_env: alpha
+    command: npm run debug
+    container_name: notification-server
+    restart: unless-stopped
+    # volumes:
+    #   - .:/app/server
+    ports:
+      - "8090:8090"
+      - "5858:5858"
+    links:
+      - notification-db
+      
+  notification-db:
+    container_name: notification-db
+    image: mongo:3.6.5
+    ports:
+      - "27018:27018"
+    volumes:
+      - mongodata:/data/db
+
+volumes:
+  mongodata:
+      driver: local
