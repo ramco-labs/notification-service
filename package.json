@@ -28,7 +28,7 @@
     "helmet": "^3.9.0",
     "html-entities": "^1.2.1",
     "jaeger-client": "^3.14.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "method-override": "^2.3.10",
     "moment": "^2.20.1",
     "mongoose": "^5.4.15",
